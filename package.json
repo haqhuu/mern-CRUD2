@@ -4,7 +4,8 @@
   "description": "A simple records system using MongoDB, Express.js, React.js, and Node.js with real-time CRUD operations using Socket.io",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
+    "dev": "nodemon -L server.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,10 +24,14 @@
     "cors": "^2.8.5",
     "express": "^4.20.0",
     "express-rate-limit": "^6.9.0",
+    "mern-crud": "file:",
     "mongoose": "^7.5.0",
     "mongoose-unique-validator": "^4.0.0",
     "mongoose-validator": "^2.1.0",
     "socket.io": "^4.7.2",
     "string-capitalize-name": "^1.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }

@@ -59,8 +59,8 @@ const server = app.listen(port, () => {
 });
 
 // Set up socket.io
-const io = socket(server,{
-  cors:{
+const io = socket(server, {
+  cors: {
     origin: config.react_app_url,
   }
 });

@@ -1,13 +1,5 @@
 version: '2'
 services:
-  nginx:
-    image: nginx:stable-alpine
-    ports:
-      - "3000:80"
-      - "4200:80"
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
-
   db:
     image: mongo:latest
   api:
@@ -15,7 +7,7 @@ services:
     image: mern-crud
     command: nodemon server
     ports:
-      - "3000"
+      - "3000:3000"
     environment:
       - "DB=mongodb://db/mern-crud"
       - "CORS=1"
@@ -29,7 +21,7 @@ services:
     image: mern-crud
     command: npm start --prefix react-src
     ports:
-      - "4200"
+      - "4200:4200"
     environment:
       - "REACT_APP_API_URL=http://localhost:3000"
     volumes:
